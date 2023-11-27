@@ -45,4 +45,10 @@ class companyView
         $this->smarty->display('./templates/editCompanyForm.tpl');
     }
 
+    function selectCompany($companies)
+    {
+        $this->smarty->assign('companies' , $companies);
+        $this->smarty->display('./templates/selectCompany.tpl');
+    }
+
 }

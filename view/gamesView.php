@@ -21,5 +21,12 @@ class gamesView
         $this->smarty->display('./templates/editGameForm.tpl');
     }
 
-
+    function showGamesByCompany($games , $mensaje=null)
+    {
+        if (!$mensaje){
+            $this->smarty->assign('mensaje' , $mensaje);
+        }
+        $this->smarty->assign('games' , $games);
+        $this->smarty->display('./templates/gamesByCompany.tpl');
+    }
 }

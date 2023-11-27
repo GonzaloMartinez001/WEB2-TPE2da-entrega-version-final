@@ -34,4 +34,18 @@ class gameModel
         $select->execute([$gameName, $genre, $year, $score, $id]);
     }
 
+    function getGameById($id){
+        $select = $this->db->prepare("SELECT * FROM games WHERE game_ID = ?");
+        $select->execute([$id]);
+        $game = $select->fetch(PDO::FETCH_OBJ);
+        return $game;
+    }
+
+    function getGamesandCompany($id) {
+        $select = $this->db->prepare("SELECT * FROM games WHERE games.company_ID = ?;");
+        $select->execute([$id]);
+        $games = $select->fetchAll(PDO::FETCH_OBJ);
+        return $games;
+    }
+
 }

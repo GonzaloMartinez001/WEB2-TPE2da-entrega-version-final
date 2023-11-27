@@ -60,5 +60,20 @@ class companyController
         header('Location: ' . BASE_URL . 'adminPanel');
     }
 
+    function getCompany($params = []) {
+        $id = $params[':ID'];
+        $company = $this->companyModel->getCompanyByID($id);
+        if ($company) {
+
+            $this->companyView->response($company);
+        } else {
+            $this->companyView->response("No se encontró ninguna compañía con el ID proporcionado.", 404);
+        }
+    }
+
+    function showSelectedCompany(){
+        $companies = $this->companyModel->getCompany();
+        $this->companyView->selectCompany($companies);
+    }
 
 }

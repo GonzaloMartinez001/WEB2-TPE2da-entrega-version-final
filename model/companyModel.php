@@ -42,4 +42,11 @@ class companyModel
         $select->execute([$companyName, $company_ID]);
     }
 
+    function getCompanyByID($id) {
+        $select = $this->db->prepare("SELECT * FROM company WHERE company_ID = ?");
+        $select->execute([$id]);
+        $company = $select->fetch(PDO::FETCH_OBJ);
+        return $company;
+    }
+
 }

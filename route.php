@@ -69,7 +69,12 @@ switch ($params[0]){
     case 'logout':
         $userController->logout();
         break;
-
+    case 'selectCompany':
+        $companyController->showSelectedCompany();
+        break;
+    case 'games-company':
+        $gameController->getGamesByCompany();
+        break;
 
 
 

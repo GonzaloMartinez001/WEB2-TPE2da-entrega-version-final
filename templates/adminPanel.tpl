@@ -3,9 +3,14 @@
 
 <div class = "container">
     <h3 class = "text-center">Admin panel</h3>
-
-    <a href="formulario" class="btn btn-primary py-2 px-4 rounded-lg text-white">Add</a>
-    <span>Press here to add games or companies </span>
+    <div class="btn-container">
+        <a href="formulario" class="btn btn-primary py-2 px-4 rounded-lg text-white">Add</a>
+        <span>Press here to add games or companies </span>
+        <div class="d-flex">
+            <a href="selectCompany" class="mt-3 btn btn-primary py-2 px-4 rounded-lg text-white">Get games by company</a>
+            <span class="mt-4 mx-2">Press here to search games by companies </span>
+        </div>
+    </div>
 
     <h1>Games List</h1>
     <div class="container table-responsive">

@@ -49,5 +49,22 @@ class gameController
         header('Location: ' . BASE_URL . 'adminPanel');
     }
 
+    function getGame($params = []) {
+        $id = $params[':ID'];
+        $game = $this->gameModel->getGameById($id);
+        if ($game) {
+
+            $this->view->response($game);
+        } else {
+            $this->view->response("No se encontró ningun juego con el ID proporcionado.", 404);
+        }
+    }
+
+    function getGamesByCompany(){
+        $id = $_POST['company_ID'];
+        $games = $this->gameModel->getGamesandCompany($id);
+        if($games)
+            $this->gamesView->showGamesByCompany($games);
+    }
 
 }
